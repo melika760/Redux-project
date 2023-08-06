@@ -1,5 +1,4 @@
 import {legacy_createStore} from "redux";
-import Counter from "../Counter";
 
 const CounterReducer=(state={Counter:0},action)=>{
 if(action.type==="INCREAMENT"){
@@ -7,6 +6,9 @@ if(action.type==="INCREAMENT"){
 }
 if(action.type==="DECREMENT"){
     return{ Counter: state.Counter-1}
+}
+if(action.type==="INCREASE"){
+    return{ Counter: state.Counter+action.amount}
 }
 return state;
 }
